@@ -11,4 +11,5 @@ You can also add options to an existing poll.
 
 
 Working sample @ http://directivemaker.info/firepoll/
+
 full description @ http://directivemaker.info/blog/2014/03/17/firepoll-real-time-poll-app/
