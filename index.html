@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="firepollapp">
+<head>
+    <title>AngularJs + Firebase real time poll app sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- App CSS -->
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Jquery and Angular js files -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+
+
+<!-- firebase and angularFire cdns-->
+<script src="https://cdn.firebase.com/js/client/1.0.6/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.7.0/angularfire.min.js"></script>
+
+
+<!-- Main App JS -->
+<script src="js/setup.js"></script>
+<script src="js/controller.js"></script>
+
+<!-- google charts directive -->
+<script src="js/ng-google-chart.js"></script>
+
+
+
+    <div id="content" class="container" ng-controller="mainCtrl">
+        <div ng-controller="mainCtrl">
+            <h2>Real time poll app - Firebase + AngularJs</h2>
+
+                <div class="leftCol">
+
+                    <div class="createPoll">
+                        <h3>Create a poll</h3>
+
+                        <form>
+                            <h4>poll's question</h4>
+
+                            <input type="text" ng-model="pollForm.name" placeholder="Poll's name" class="w200"><br>
+
+                            <h4>Poll's answers</h4>
+
+                            <div ng-repeat="option in pollForm.options track by $index">
+                                Option {{ $index+1 }} <input type="text" placeholder="option"
+                                                              ng-model="pollForm.options[$index][0]">
+                                <button class="btn" ng-click="removeOption($index)"> - </button>
+                            </div>
+                            <button class="btn blue" ng-click="addPollOption()">+ Add answer</button>
+                            <br>
+                            <br>
+                            <button class="btn green" ng-click="pollCreate()"> << Create the poll >> </button>
+                        </form>
+                        <br>
+                    </div>
+
+                    <div class="selectPoll">
+                        <h3>Select an existing poll</h3>
+                        <div ng-show="load">
+                            ... Loading
+                        </div>
+                        <div ng-show="!load">
+                        <button ng-repeat="(key, value) in polls track by $index" ng-click="selectPoll(key)"
+                                class="pollSelectBtn btn yellow">
+                            {{ value.name }}
+                        </button>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+
+                </div>
+
+                <div class="rightCol">
+
+
+                    <div ng-if="selectedPoll">
+                        <div google-chart chart="chart">
+                        </div>
+                        <br>
+
+                        <form>
+                            <h3>Vote:</h3><br>
+
+                        <div>
+                            <span class="voteDiv" ng-repeat="data in selectedPollOptions">
+                                <button class="btn btn-primary" ng-click="vote($index)">{{ data[0] }}</button>
+                            </span>
+                        </div>
+                            <div>
+                                Other: <input ng-minlength="1" type="text" ng-model="vote.optionOther" class="w200"><button class="btn green" ng-click="addOther()">Add and Vote</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        <div>
+            <blockquote>
+            This is a sample app. It has no limitations and need no authentication. Open for you to play with.<br>
+            For best view of the real time element - open it in two different browsers and watch what happens to one when you vote in the other.<br>
+            Code and more @ <a href="http://directivemaker.info/blog/">http://directivemaker.info/blog/</a>
+            </blockquote>
+        </div>
+
+        </div>
+
+
+
+</body>
+</html>

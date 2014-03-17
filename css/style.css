@@ -1,0 +1,50 @@
+
+.container {width:99%}
+.leftCol {width:28%; float: left; padding: 10px}
+.rightCol {width:68%; float: left; padding: 10px}
+.chart {
+    height:300px;
+    width:500px;
+    border:1px inset black;
+    padding:5px;
+}
+.btn {
+    padding: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.w200 {width:200px;}
+.green {background: #51a351; color: #ffffff}
+.blue {background: #0480be; color: #FFFFFF}
+.yellow {background: #b38300; color: #ffffff}
+
+
+.createPoll{
+    background: #66afe9;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.selectPoll {
+    clear: both;
+    background: #e1ebb3;
+    padding: 10px;
+    border: 1px solid #b38300;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+.pollSelectBtn {
+    width:120px;
+    height:30px;
+    overflow: hidden;
+    float: left;
+}
+
+.voteDiv {margin: 0 3px}
