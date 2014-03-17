@@ -2,7 +2,8 @@ angular.module('firepollapp').controller('mainCtrl',function($scope, $firebase){
 
 
     // firebase
-    var ref = new Firebase("https://heaphap.firebaseio.com/polls/");
+    // Set YOURAPP - to your firebase address
+    var ref = new Firebase("https://YOURAPP.firebaseio.com/polls/");
     // Automatically syncs everywhere in realtime
     $scope.polls = $firebase(ref);
 
