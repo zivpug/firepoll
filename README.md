@@ -10,6 +10,6 @@ App allows creating new polls and voting on polls from the list.
 You can also add options to an existing poll.
 
 
-Working sample @ http://directivemaker.info/firepoll/
+Working sample @ http://ziv-p.com/firepoll/
 
-full description @ http://directivemaker.info/blog/2014/03/17/firepoll-real-time-poll-app/
+full description @ http://ziv-p.com/blog/2014/03/17/firepoll-real-time-poll-app/
